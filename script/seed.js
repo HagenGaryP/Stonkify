@@ -2,26 +2,22 @@
 
 const db = require('../server/db');
 
-const {Topic} = require('../server/db/models');
+const {Stock} = require('../server/db/models');
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
   await Promise.all([
-    Topic.create({
-      name: 'ReactJS',
-      url: "https://reactjs.org",
-      description: "Using props and state, we can put together a small Todo application.This example uses state to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation."
+    Stock.create({
+      ticker: 'TSLA',
+      company: "Tesla",
+      price: 850.88,
+      description: "It's Tesla.. do you really need a description?"
     }),
   ]);
 }
 
-
-
-// We've separated the `seed` function from the `runSeed` function.
-// This way we can isolate the error handling and exit trapping.
-// The `seed` function is concerned only with modifying the database.
 async function runSeed() {
   console.log('seeding...')
   try {
@@ -36,12 +32,8 @@ async function runSeed() {
   }
 }
 
-// Execute the `seed` function, IF we ran this module directly (`node seed`).
-// `Async` functions always return a promise, so we can use `catch` to handle
-// any errors that might occur inside of `seed`.
 if (module === require.main) {
   runSeed()
 }
 
-// we export the seed function for testing purposes (see `./seed.spec.js`)
 module.exports = seed;

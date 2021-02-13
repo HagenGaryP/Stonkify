@@ -11,8 +11,6 @@ dotenv.config();
 const app = express();
 const socketio = require('socket.io');
 
-const { bot, handleMessage } = require('./utility');
-
 const PORT = process.env.PORT || 8080;
 const API_KEY = process.env.API_KEY;
 
@@ -42,7 +40,7 @@ const createApp = () => {
   // session middleware with passport
   app.use(
     session({
-      secret: process.env.SESSION_SECRET || 'my best friend is Cody',
+      secret: process.env.SESSION_SECRET || 'not using SESSION_SECRET',
       resave: false,
       saveUninitialized: false,
     })
@@ -100,21 +98,3 @@ if (require.main === module) {
 } else {
   createApp();
 }
-
-
-// SLACK BOT LISTENERS
-
-// Error Handler - a function to check for errors and return them
-bot.on('error', (err) => {
-    console.log(err);
-})
-
-// Message Handler
-bot.on('message', (data) => {
-  // console.log('data >>>>> ', data)
-  if (data.type !== 'message') {
-    return;
-  } else {
-    handleMessage(data.text);
-  }
-});

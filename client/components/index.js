@@ -3,9 +3,8 @@
  * This way, we can import all of our components from the same place, rather than
  * having to figure out which file they belong to!
  */
-export { default as AllTopics } from './AllTopics';
+export { default as AllStocks } from './AllStocks';
 export { LandingPage } from './LandingPage';
-export { default as TopicPreview } from './TopicPreview';
-export { default as SingleTopic } from './SingleTopic';
-export { default as AddTopic } from './AddTopic';
-export { default as AddTopicForm } from './AddTopicForm';
+export { default as StockPreview } from './StockPreview';
+export { default as SingleStock } from './SingleStock';
+

@@ -1,5 +1,5 @@
-const Topic = require('./topic');
+const Stock = require('./stock');
 
 module.exports = {
-  Topic,
+  Stock,
 };

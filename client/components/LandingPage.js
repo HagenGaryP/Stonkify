@@ -7,11 +7,11 @@ export const LandingPage = () => {
     <div className="home-page-container">
       {/* <div className="front-page-welcome"> */}
         <div className="front-display-text">
-          <h1 className="primary-header">Micro-Learner</h1>
+          <h1 className="primary-header">STONKIFY</h1>
           <div className="front-page-buttons">
-            <Link to="/topics">
+            <Link to="/stocks">
               <Button variant="outline-light">
-                <h2>VIEW TOPICS</h2>
+                <h2>VIEW STONKZ</h2>
               </Button>
             </Link>
           </div>

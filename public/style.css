@@ -63,9 +63,9 @@ button {
 }
 
 
-/* ------------- All Topics Page ---------------*/
+/* ------------- All Stocks Page ---------------*/
 
-.all-topics-start {
+.all-stocks-start {
   background-color: #e62c2c;
   background-image: linear-gradient(315deg, #d74040 0%, #7e8996 90%);
   padding-top: 75px;
@@ -104,7 +104,7 @@ input {
 
 }
 
-.all-topics-container {
+.all-stocks-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -114,7 +114,7 @@ input {
 
 /* ----- Preview ------ */
 
-.topic-card {
+.stock-card {
   display: flex;
   margin: 2rem;
   /* border-radius: 7px; */
@@ -123,14 +123,14 @@ input {
   height: 20%;
 }
 
-.topic-img {
+.stock-img {
   display: flex;
   height: 3.5rem;
   max-width: 8rem;
   margin: 0 auto;
 }
 
-.topic-card-textarea {
+.stock-card-textarea {
   display: flex;
   width: 100%;
   font-size: 1.2rem;
@@ -142,7 +142,7 @@ input {
   margin-top: .5rem;
 }
 
-.topic-card-name {
+.stock-card-name {
   font-family: "Roboto";
   font-size: 1.1em;
   font-weight: 500;
@@ -159,15 +159,15 @@ input {
 }
 
 
-/* ------------- Single Topic ---------------*/
-.single-topic-img {
+/* ------------- Single Stock ---------------*/
+.single-stock-img {
   height: 250px;
   width: 250px;
   background-size: cover;
   border-radius: 2px;
 }
 
-.single-topic-info-container {
+.single-stock-info-container {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -176,7 +176,7 @@ input {
   align-content: center;
 }
 
-.topic-link {
+.stock-link {
   display: flex;
   justify-content: center;
   font-size: 4rem;
@@ -185,26 +185,26 @@ input {
   text-decoration: underline;
 }
 
-.single-topic-img-container {
+.single-stock-img-container {
   height: fit-content;
   margin-left: 5rem;
   margin-top: 2rem;
   margin-right: 2rem;
 }
 
-.single-topic-description {
+.single-stock-description {
   margin-top: 25px;
   font-family: 'Roboto';
   font-size: 1.5rem;
   align-self: flex-end;
 }
 
-.single-topic-container {
+.single-stock-container {
   display: flex;
   margin-top: 75px;
 }
 
-.topic-preview {
+.stock-preview {
   margin: 25px;
 }
 
@@ -218,9 +218,9 @@ input {
 }
 
 
-/* ------------- Add Topic Component ---------------*/
+/* ------------- Add Stock Component ---------------*/
 
-.add-topic {
+.add-stock {
   display: flex;
   align-self: flex-end;
   justify-content: right;
@@ -233,7 +233,7 @@ input {
   border-radius:  20rem;
 }
 
-.add-topic:hover {
+.add-stock:hover {
   transform: translateY(-.3rem);
   box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
 }
