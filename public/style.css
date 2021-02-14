@@ -115,39 +115,38 @@ input {
 /* ----- Preview ------ */
 
 .stock-card {
-  display: flex;
-  margin: 2rem;
-  /* border-radius: 7px; */
-  align-items: center;
   width: 20%;
-  height: 20%;
-}
-
-.stock-img {
-  display: flex;
-  height: 3.5rem;
-  max-width: 8rem;
-  margin: 0 auto;
-}
-
-.stock-card-textarea {
-  display: flex;
-  width: 100%;
   font-size: 1.2rem;
   height: 21.5%;
   padding: 1rem;
   background-color:rgba(186, 186, 212, 0.762);
-  justify-content: center;
   border-radius: 0 0 5px 5px;
   margin-top: .5rem;
 }
 
 .stock-card-name {
+  display: flex;
   font-family: "Roboto";
-  font-size: 1.1em;
-  font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 900;
   text-overflow: ellipsis;
+  text-decoration: underline;
 }
+
+.stock-card-textarea {
+  display: flex;
+  margin-top: -2rem;
+  margin-left: 1rem;
+  justify-content: left;
+  width: 100%;
+  height: 20%;
+}
+
+.stock-ticker-and-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 
 .hover-links:hover {
   cursor: pointer;
