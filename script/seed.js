@@ -8,14 +8,14 @@ async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  await Promise.all([
-    Stock.create({
-      ticker: 'TSLA',
-      company: "Tesla",
-      price: 850.88,
-      description: "It's Tesla.. do you really need a description?"
-    }),
-  ]);
+  // await Promise.all([
+  //   Stock.create({
+  //     ticker: 'TSLA',
+  //     company: "Tesla",
+  //     price: 850.88,
+  //     description: "It's Tesla.. do you really need a description?"
+  //   }),
+  // ]);
 }
 
 async function runSeed() {

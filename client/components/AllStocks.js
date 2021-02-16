@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { StockPreview } from "./index";
 import { fetchStocks, fetchSearchedStocks } from "../store";
+import axios from 'axios';
+
+/**
+ * Component - This will likely be changed to a "watch list"
+ */
 
 const AllStocks = ({
   stocks,
@@ -23,10 +28,11 @@ const AllStocks = ({
 
   // handle Searched Term
   const handleSearch = async () => {
+    let res;
     try {
-      const newData = await searchStocks(searchTerm);
-      console.log("newData = ", newData);
-      setData([...data, newData]);
+      res = await searchStocks(searchTerm);
+      setData([...data, res]);
+      console.log("response = ", res);
     } catch (error) {
       console.log(error);
     }
