@@ -14,10 +14,22 @@ const AllStocks = ({
   getStocks,
   searchStocks,
 }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [data, setData] = useState([]);
+  const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
+    let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
+    console.log('month = ', month, '  date = ', date, ' year = ', year);
+    if (month < 10) {
+      month = '0' + month;
+    }
+    if (date < 10) {
+      date = '0' + date;
+    }
+    const today = year + '-' + month + '-' + date;
+    console.log('todays date = ', today);
+    // setCurrentDate()
     getStocks();
     setData([...data, stocks]);
   }, []);

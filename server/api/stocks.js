@@ -52,6 +52,16 @@ router.delete('/:id', async (req, res, next) => {
 
 // Internal API call to search for a stock externally
 router.get('/search/:searchTerm', async (req, res, next) => {
+  let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
+    console.log('month = ', month, '  date = ', date, ' year = ', year);
+    if (month < 10) {
+      month = '0' + month;
+    }
+    if (date < 10) {
+      date = '0' + date;
+    }
+    const today = year + '-' + month + '-' + date;
+    console.log('todays date = ', today);
   try {
     const stockTicker = req.params.searchTerm.toUpperCase();
 
@@ -59,7 +69,7 @@ router.get('/search/:searchTerm', async (req, res, next) => {
     const { data } = await axios.get(`https://api.polygon.io/v2/reference/tickers?sort=ticker&locale=us&search=${stockTicker}&perpage=5&page=1&apiKey=${API_KEY}`)
     // response = await fetchStock(req.params.searchTerm);
     // this responds with the price info for that stock
-    const response = await axios.get(`https://api.polygon.io/v2/aggs/ticker/${stockTicker}/range/1/day/2021-02-12/2021-02-12?apiKey=${API_KEY}`)
+    const response = await axios.get(`https://api.polygon.io/v2/aggs/ticker/${stockTicker}/range/1/day/${today}/${today}?apiKey=${API_KEY}`);
 
     console.log('data >>>>> ', data);
     console.log('response.data >>>>> ', response.data);
@@ -68,7 +78,10 @@ router.get('/search/:searchTerm', async (req, res, next) => {
     if (data.tickers[0]) {
       try {
         // setting current price key/value on data obj
-        data.price = response.data.results[0].c;
+        if (response.data.results) {
+          console.log('RESPONSE DATA RESULTS =======', response.data.results);
+          // data.price = response.data.results[0].c;
+        }
         console.log('data.price = ', data.price)
         const stock = await Stock.create({
           ticker: data.tickers[0].ticker,
